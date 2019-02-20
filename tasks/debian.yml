@@ -1,0 +1,35 @@
+---
+- name: Prerequisite fot ansible apt_repository module
+  apt:
+    name: software-properties-common
+
+- name: Prerequisite for neovim python module is installed
+  apt:
+    name: "{{ neovim_package_requirements }}"
+    cache_valid_time: 3600
+
+- name: Neovim repository is added
+  apt_repository:
+    repo: "ppa:neovim-ppa/{{ neovim_repository_channel }}"
+    update_cache: yes
+
+- name: Neovim is installed
+  apt:
+    name: "neovim={{ neovim_package_version }}"
+
+- name: Old package of neovim is absent
+  pip:
+    name: neovim
+    state: absent
+    executable: "{{ item }}"
+  with_items:
+    - pip
+    - pip3
+
+- name: Pynvim is installed
+  pip:
+    name: pynvim
+    executable: "{{ item }}"
+  with_items:
+    - pip
+    - pip3

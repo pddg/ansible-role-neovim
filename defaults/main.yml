@@ -1,0 +1,13 @@
+---
+# Install latest version of neovim by default.
+neovim_version: "*"
+# Set ppa repository channel. 'stable' or 'unstable'.
+neovim_repository_channel: "stable"
+# Install neovim package of python
+neovim_package_requirements:
+  - python
+  - python-dev
+  - python-pip
+  - python3
+  - python3-dev
+  - python3-pip

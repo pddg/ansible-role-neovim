@@ -1,0 +1,2 @@
+---
+neovim_package_version: '{{ (neovim_version | string | regex_search("^\d+\.\d+(\.\d+)?$") or "") + "*" }}'

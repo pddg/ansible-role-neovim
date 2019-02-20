@@ -1,0 +1,21 @@
+galaxy_info:
+  author: pddg
+  role_name: neovim
+  description: Introduce neovim role
+  company: StudioAquatan
+
+  license: MIT
+
+  min_ansible_version: 2.7
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - xenial
+
+  galaxy_tags:
+    - neovim
+    - vim
+
+dependencies: []
