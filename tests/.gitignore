@@ -1,0 +1,5 @@
+tests/*
+!tests/Vagrantfile
+!tests/test.yml
+.DS_Store
+
